@@ -1,18 +1,13 @@
 import React, { FunctionComponent} from 'react';
 
 import { GreenButton, CheckBox, RadioButton, IProps } from "../../../components/Input";
+import {IFilter} from '../Auction'
 
 type Props = {
   statuses?: IProps[];
   classes?: IProps[];
+  onFilterChange: (data:any) => void
 }
-
-interface IFilter {
-  assetId: string;
-  selectedClasses: string[];
-  selectedStatuses: string;
-}
-
 
 const Filter:FunctionComponent<Props> = (props: Props) => {
   
@@ -52,8 +47,8 @@ const Filter:FunctionComponent<Props> = (props: Props) => {
               <i className="fas fa-angle-left"></i>
             </div>
           </div>
-          <div className="filter-header-group">
-            <GreenButton title='Apply'/>
+          <div className="filter-header-group space-x-2">
+            <GreenButton title='Apply' onClick={() => props.onFilterChange(filter)}/>
             <GreenButton title='Reset'/>
           </div>
         </div>

@@ -32,3 +32,17 @@ export const Modal: FC<IModal> = (params) => {
     </div>
   )
 }
+
+export const LandViewBoard:FC<IModal> = (params) => {
+  
+  const {
+    children, title
+  } = params;
+
+  return (
+    <div className="land-view-container col c-12 m-6 l-8 game-border fancy">
+      <div className="close-btn click-cursor"></div>
+      <h2 className="land-view__heading">View All Assets</h2>
+        { children }
+    </div>)
+}
