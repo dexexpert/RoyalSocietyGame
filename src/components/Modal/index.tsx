@@ -36,7 +36,7 @@ export const Modal: FC<IModal> = (params) => {
 export const LandViewBoard:FC<IModal> = (params) => {
   
   const {
-    children, title
+    children
   } = params;
 
   return (
