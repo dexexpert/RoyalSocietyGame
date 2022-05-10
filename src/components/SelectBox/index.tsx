@@ -1,6 +1,6 @@
 import React, { FC, useState, useRef, useEffect } from "react";
 
-import Icons from "../Icons";
+// import Icons from "../Icons";
 
 export interface ISelectItem {
   value: number,
@@ -41,7 +41,7 @@ const SelectBox: FC<Props> = (props: Props) => {
           className={`${openState?'selectbox ':''}block w-full px-3 py-1.5 text-sm font-normal bg-[#0000] bg-clip-padding bg-no-repeat border border-solid border-white rounded-lg transition ease-in-out m-0 hover:bg-[#FAB801]`}
           onClick={() => open(!openState)}
         >
-          {
+          {/* {
             items?.map((t, i) => {
               if(i === selectedItem) return (
                 <div key={i} className="flex flex-row justify-between">{
@@ -50,7 +50,7 @@ const SelectBox: FC<Props> = (props: Props) => {
               )
               else return ''
             })
-          }
+          } */}
         </div>
         
         {openState?
