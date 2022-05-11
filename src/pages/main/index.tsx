@@ -8,7 +8,7 @@ export default function Main() {
   interface IPosition { x: number; y: number; }
 
   const[clicked,setClicked] = useState(false);
-  const[scale,setScale] = useState(2);
+  const[scale,setScale] = useState(0.6);
   const[position,setPosition] = useState<IPosition>({ x: 0, y: 0 });
   const[clickedPoint, setClickedPoint] = useState<IPosition>({x:-10000, y: -10000})
   
@@ -54,6 +54,12 @@ export default function Main() {
         onMouseMove={getMouseDirection}
         onMouseUp={() => {
           setClicked(false);
+          console.log('width:', window.screen.width);
+          if(scale * 1500 < window.screen.width - 200)
+          setPosition({
+            x: 0,
+            y: 0,
+          })
           setClickedPoint({
             x: -10000,
             y: -10000
@@ -68,6 +74,15 @@ export default function Main() {
         >
           <div className="land-auction-btn click-cursor">
             <GameButton title="Marketplace" onClick={() => navigate("/marketplace")}/>
+          </div>
+          <div className="quest-btn click-cursor">
+           <GameButton title="Quest" onClick={() => navigate("/quest")}/>
+          </div>
+          <div className="summon-btn click-cursor">
+           <GameButton title="Summon" onClick={() => navigate("/summon")}/>
+          </div>
+          <div className="lp-btn click-cursor">
+           <GameButton title="LP" onClick={() => navigate("/lp")}/>
           </div>
         </div>
       </div>

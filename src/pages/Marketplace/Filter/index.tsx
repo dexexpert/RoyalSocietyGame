@@ -38,7 +38,7 @@ const Filter:FunctionComponent<Props> = (props: Props) => {
   };
 
   return (
-    <div className="filter col c-12 m-6 l-4 active" data-v-412a3124="">
+    <div className="filter col md:w-1/3 w-4/5" data-v-412a3124="">
       <div className="filter-expanded game-border basic">
         <div className="filter-header">
           <div className="filter-header-group">

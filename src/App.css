@@ -284,7 +284,6 @@ hr {
   will-change: opacity;
   transition: all .5s linear;
   margin: 0;
-  padding: 60px 3% 30px;
   box-sizing: border-box;
   overflow: auto;
   flex-direction: row;
@@ -536,6 +535,7 @@ hr {
 
 .land-list {
   flex: 1;
+  justify-content: center;
   overflow-y: auto;
   position: relative;
   z-index: 1;
@@ -710,13 +710,45 @@ hr {
     max-width: 25%;
   }
   .view-card {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
   }
   .summry-sort-land {
     flex-direction: row;
   }
 }
+
+.quest-btn {
+  position: absolute;
+  top: 319.5px;
+  left: 294px;
+  height: 80px;
+  width: 100px;
+}
+
+.summon-btn {
+  position: absolute;
+  top: 319.5px;
+  left: 1334px;
+  height: 80px;
+  width: 100px;
+}
+
+.lp-btn {
+  position: absolute;
+  top: 1119.5px;
+  left: 1054px;
+  height: 80px;
+  width: 100%;
+}
+
+@media (max-width: 740px) { 
+  .view-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 
 @media (min-width: 740px) {
   .row {
@@ -730,10 +762,6 @@ hr {
   .col {
     padding-left: 8px;
     padding-right: 8px;
-  }
-  .view-card {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
 
   .land-auction {
