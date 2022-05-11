@@ -1,11 +1,7 @@
 html {
   cursor: url("/public/assets/default-cursor.png"),auto !important;
   font-family: Poppins;
-  overflow: hidden;
-}
-
-body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 button {
@@ -22,10 +18,6 @@ hr {
   border: 0;
   border-bottom: 1px solid rgba(62,31,5,.1);
   margin: 1em 0 0;
-}
-
-.root {
-  overflow: hidden;
 }
 
 .castle-overlay {
@@ -231,14 +223,8 @@ hr {
 
 .modal-body button {
   min-width: 200px;
-  margin: 5px 0;
+  margin: 5px 5px;
   background: maroon;
-}
-
-.modal-body button {
-    min-width: 200px;
-    margin: 5px 0;
-    background: maroon;
 }
 
 .green-button {
@@ -300,6 +286,8 @@ hr {
   margin: 0;
   padding: 60px 3% 30px;
   box-sizing: border-box;
+  overflow: auto;
+  flex-direction: row;
 }
 
 .row {
@@ -394,8 +382,8 @@ hr {
 .filter-body {
   position: relative;
   height: calc(100% - 100px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto;
+  overflow-x: hidden; */
   padding: 0 3px 3px;
   margin: 1em 0 0;
 }
@@ -529,6 +517,7 @@ hr {
   padding: 50px 75px 60px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .land-select__list select {
@@ -661,13 +650,42 @@ hr {
   justify-content: flex-end;
 }
 
-@media (max-width: 1024px) {
+.game-scroll-bar::-webkit-scrollbar-thumb {
+  background-color: #ffe3bc;
+  margin: 2px 0;
+  width: 6px;
+  border-radius: 16px;
+}
+
+.game-scroll-bar::-webkit-scrollbar {
+  width: 6px;
+  padding: 3px 0;
+}
+
+.c-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+@media (min-width: 1600px) { 
+  .view-card {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 1024px) {
   .filter {
     height: auto;
   }
   .land-view-container {
     padding: 115px 55px 70px;
-}
+  }
+  .view-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 @media (min-width: 1113px) {
@@ -691,6 +709,13 @@ hr {
     flex: 0 0 25%;
     max-width: 25%;
   }
+  .view-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .summry-sort-land {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 740px) {
@@ -700,10 +725,18 @@ hr {
   }
   .m-6 {
     flex: 0 0 50%;
-    /* max-width: 50%; */
+    max-width: 50%;
   }
   .col {
     padding-left: 8px;
     padding-right: 8px;
-}
+  }
+  .view-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .land-auction {
+    flex-direction: column;
+  }
 }

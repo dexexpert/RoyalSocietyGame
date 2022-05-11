@@ -12,7 +12,7 @@ export const statuses: IProps[] = [
 ]
 
 export const classes: IProps[] = [
-  { title: 'King', value: 0 },
+  { title: 'All', value: 0 },
   { title: 'Not for sale', value: 1 },
   { title: 'For Lease', value: 2 },
   { title: 'King', value: 3 },

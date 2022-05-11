@@ -9,7 +9,7 @@ type Props = {
 const ViewCard:FunctionComponent<Props> = (props: Props) => {
   const {name, id, img, classs, status, level, price} = props.asset
   return (
-    <div className="col l-3" data-v-258caee8="">
+    <div className="col view-card" data-v-258caee8="">
       <div data-v-258caee8="">
         <div className="land-item">
           <div className="land-image-wrap">

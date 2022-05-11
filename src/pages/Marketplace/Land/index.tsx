@@ -10,6 +10,9 @@ type Props = {
 }
 
 const LandView:FunctionComponent<Props> = (props: Props) => {
+  const {filter} = props;
+  console.log('asdf',filter);
+  
   return (
     <LandViewBoard title="View All Assets">
       <div className="summry-sort-land" data-v-60f0dc79="">
@@ -34,13 +37,27 @@ const LandView:FunctionComponent<Props> = (props: Props) => {
             </select>
           </div>
         </div>
-        <div className="land-list game-scroll-bar row">
-          {
-            props.assests.map((a, i) => (
-              <ViewCard key={i} asset={a}/>
-            ))
+      </div>
+      <div className="land-list game-scroll-bar row">
+        {
+          props.assests.map((a, i) => {
+            if(
+              (filter.assetId === '' || (a.name.search(filter.assetId))) &&
+              (filter.selectedStatuses === '-1' || a.status.toString() === filter.selectedStatuses) &&
+              (
+                filter.selectedClasses.some((s) => {
+                return s === '0';
+              }) ||
+                filter.selectedClasses.some((s) => {
+                return s === a.classs?.toString();
+              }))
+            )
+            return <ViewCard key={i} asset={a}/>
+            else return <div key={i}></div>
           }
-        </div>
+            
+          )
+        }
       </div>
     </LandViewBoard>
   )
