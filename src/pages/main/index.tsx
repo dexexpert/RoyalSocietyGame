@@ -19,20 +19,21 @@ export default function Main() {
   const getMouseDirection = (e: MouseEvent<HTMLDivElement>) => {
     //deal with the horizontal case
     if(clicked) {
+      console.log('x:',e.pageX, 'y:', e.pageY);
       let xDirection = 0;
       let yDirection = 0;
       if(clickedPoint.x>-10000 && clickedPoint.y>-10000) {
-        xDirection =  (e.pageX - clickedPoint.x) * 0.2 * scale;
+        xDirection =  (e.pageX - clickedPoint.x) * scale;
         if((position.x>500 && xDirection > 0) || (position.x<-500 && xDirection < 0)) xDirection = 0;
-        yDirection =  (e.pageY - clickedPoint.y) * 0.2 * scale;
+        yDirection =  (e.pageY - clickedPoint.y) * scale;
         if((position.y>500 && yDirection > 0) || (position.y<-500 && yDirection < 0)) yDirection = 0;
       }
-      else {
+      // else {
         setClickedPoint({
           x: e.pageX,
           y: e.pageY
         })
-      }
+      // }
       setPosition({
         x: position.x + xDirection,
         y: position.y + yDirection,
@@ -73,10 +74,13 @@ export default function Main() {
           ref={divRef}
         >
           <div className="land-auction-btn click-cursor">
-            <GameButton title="Marketplace" onClick={() => navigate("/marketplace")}/>
+            <GameButton title="Stake" onClick={() => navigate("/stake")}/>
           </div>
           <div className="quest-btn click-cursor">
            <GameButton title="Quest" onClick={() => navigate("/quest")}/>
+          </div>
+          <div className="market-btn click-cursor">
+           <GameButton title="Market" onClick={() => navigate("/market")}/>
           </div>
           <div className="summon-btn click-cursor">
            <GameButton title="Summon" onClick={() => navigate("/summon")}/>

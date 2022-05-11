@@ -13,7 +13,7 @@ const Marketplace = () => {
     <Modal title="Market Place">
       <Routes>
         <Route path='/' element={<>
-          <GreenButton title="View Items" onClick={() => navigate("/marketplace/auction")}/>
+          <GreenButton title="View Items" onClick={() => navigate("/stake/auction")}/>
           <GreenButton title="Buy Items"/>
           </>
         }/>

@@ -19,8 +19,8 @@ const LandView:FunctionComponent<Props> = (props: Props) => {
         <div className="land-summary" data-v-60f0dc79="">
           <span data-v-60f0dc79=""> Showing 5 Assets </span>
         </div>
-        <div className="land-sort" data-v-60f0dc79="">
-          <span className="land-sort__label" data-v-60f0dc79="">Sort by: </span>
+        <div className="land-sort space-x-2" data-v-60f0dc79="">
+          <span className="land-sort__label mr-5" data-v-60f0dc79="">Sort by: </span>
           <div className="land-select__list" id="landPropertyLabel" data-v-60f0dc79="">
             <select className="click-cursor" name="landProperty" id="landProperty" data-v-60f0dc79="">
               <option value="0" data-v-60f0dc79="">ID</option>
