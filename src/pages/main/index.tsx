@@ -9,7 +9,10 @@ export default function Main() {
 
   const[clicked,setClicked] = useState(false);
   const[scale,setScale] = useState(0.8);
-  const[position,setPosition] = useState<IPosition>({ x: 0, y: 0 });
+  const[position,setPosition] = useState<IPosition>({
+    x: (window.screen.width-1500)/2,
+    y: 0,
+  });
   const[clickedPoint, setClickedPoint] = useState<IPosition>({x:-10000, y: -10000})
   
   const navigate = useNavigate();
