@@ -50,6 +50,7 @@ hr {
   background-position: center;
   min-width: 1500px;
   min-height: 1500px;
+  transition: all 0.3s;
   transform-origin: center;
 }
 
@@ -220,7 +221,7 @@ hr {
 }
 
 .modal-body button {
-  min-width: 200px;
+  min-width: 180px;
   margin: 5px 5px;
   background: maroon;
 }
@@ -293,6 +294,7 @@ hr {
   flex-wrap: wrap;
   margin-left: -4px;
   margin-right: -4px;
+  justify-content: center;
 }
 
 @keyframes buttonAnimation {
@@ -812,5 +814,6 @@ hr {
 
   .land-auction {
     flex-direction: column;
+    justify-content: start;
   }
 }

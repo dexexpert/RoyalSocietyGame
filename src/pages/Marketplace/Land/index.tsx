@@ -11,7 +11,6 @@ type Props = {
 
 const LandView:FunctionComponent<Props> = (props: Props) => {
   const {filter} = props;
-  console.log('asdf',filter);
   
   return (
     <LandViewBoard title="View All Assets">

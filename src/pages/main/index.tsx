@@ -8,7 +8,7 @@ export default function Main() {
   interface IPosition { x: number; y: number; }
 
   const[clicked,setClicked] = useState(false);
-  const[scale,setScale] = useState(0.6);
+  const[scale,setScale] = useState(0.8);
   const[position,setPosition] = useState<IPosition>({ x: 0, y: 0 });
   const[clickedPoint, setClickedPoint] = useState<IPosition>({x:-10000, y: -10000})
   
@@ -24,7 +24,7 @@ export default function Main() {
       let yDirection = 0;
       if(clickedPoint.x>-10000 && clickedPoint.y>-10000) {
         xDirection =  (e.pageX - clickedPoint.x) * scale;
-        if((position.x>500 && xDirection > 0) || (position.x<-500 && xDirection < 0)) xDirection = 0;
+        if((position.x>300 && xDirection > 0) || (position.x<-300 && xDirection < 0)) xDirection = 0;
         yDirection =  (e.pageY - clickedPoint.y) * scale;
         if((position.y>500 && yDirection > 0) || (position.y<-500 && yDirection < 0)) yDirection = 0;
       }
@@ -42,6 +42,11 @@ export default function Main() {
   }
 
   const getWheelEvent = (e:React.WheelEvent<HTMLDivElement>) => {
+    if(scale * 1500 < window.screen.width)
+    setPosition({
+      x: 0,
+      y: 0,
+    })
     if(e.deltaY<0 && scale < 2) setScale(scale + 0.1);
     else if(e.deltaY>0 && scale > 0.5) setScale(scale - 0.1);
   }
@@ -56,7 +61,20 @@ export default function Main() {
         onMouseUp={() => {
           setClicked(false);
           console.log('width:', window.screen.width);
-          if(scale * 1500 < window.screen.width - 200)
+          if(scale * 1500 < window.screen.width)
+          setPosition({
+            x: 0,
+            y: 0,
+          })
+          setClickedPoint({
+            x: -10000,
+            y: -10000
+          })
+        }}
+        onMouseLeave={() => {
+          setClicked(false);
+          console.log('width:', window.screen.width);
+          if(scale * 1500 < window.screen.width)
           setPosition({
             x: 0,
             y: 0,
@@ -80,7 +98,7 @@ export default function Main() {
            <GameButton title="Quest" onClick={() => navigate("/quest")}/>
           </div>
           <div className="market-btn click-cursor">
-           <GameButton title="Market" onClick={() => navigate("/market")}/>
+           <GameButton title="MarketPlace" onClick={() => navigate("/market")}/>
           </div>
           <div className="summon-btn click-cursor">
            <GameButton title="Summon" onClick={() => navigate("/summon")}/>

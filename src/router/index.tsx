@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Main from "../pages/main/index";
-import Stake from "../pages/Marketplace";
+import MarketPlace from "../pages/Marketplace";
 import { Modal } from "../components/Modal";
 
 const ComingSoon = () => {
@@ -19,16 +19,16 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/stake/*" element={<Stake />} />
+      <Route path="/market/*" element={<MarketPlace />} />
       <Route path='/quest' element=
         {
           <Modal title="Quest" >
             <ComingSoon/>
           </Modal>
         }/>
-      <Route path='/market' element=
+      <Route path='/stake' element=
         {
-          <Modal title="Market" >
+          <Modal title="Stake" >
             <ComingSoon/>
           </Modal>
         }/>
