@@ -8,7 +8,7 @@ export default function Main() {
   interface IPosition { x: number; y: number; }
 
   const[clicked,setClicked] = useState(false);
-  const[scale,setScale] = useState(0.8);
+  const[scale,setScale] = useState(0.4);
   const[position,setPosition] = useState<IPosition>({
     x: (window.screen.width-1500)/2,
     y: 0,
