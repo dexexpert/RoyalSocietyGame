@@ -221,7 +221,6 @@ hr {
 }
 
 .modal-body button {
-  min-width: 180px;
   margin: 5px 5px;
   background: maroon;
 }
@@ -236,7 +235,6 @@ hr {
     color: #ffe3bc;
     font-size: 18px;
     margin: 2px 0;
-    min-width: 120px;
     transition: background-color .3s ease-in;
     padding: 6px 24px;
 }
@@ -312,6 +310,10 @@ hr {
 .filter {
   display: flex;
   justify-content: flex-end;
+}
+
+.filter-region__list {
+  justify-content: flex-start;
 }
 
 .c-12 {
@@ -514,7 +516,6 @@ hr {
 }
 
 .land-view-container {
-  height: 130vh;
   padding: 50px 75px 60px;
   display: flex;
   flex-direction: column;
@@ -579,7 +580,7 @@ hr {
   background-repeat: repeat-x,repeat-x;
 }
 
-.land-image-wrapbefore, .land-image-wrapafter {
+.land-image-wrap:before, .land-image-wrap:after {
   position: absolute;
   content: "";
   height: calc(100% + 6px);
@@ -678,9 +679,6 @@ hr {
 }
 
 @media (min-width: 1024px) {
-  .filter {
-    height: auto;
-  }
   .land-view-container {
     padding: 115px 55px 70px;
   }

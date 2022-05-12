@@ -44,7 +44,7 @@ export default function Main() {
   const getWheelEvent = (e:React.WheelEvent<HTMLDivElement>) => {
     if(scale * 1500 < window.screen.width)
     setPosition({
-      x: 0,
+      x: (window.screen.width-1500)/2,
       y: 0,
     })
     if(e.deltaY<0 && scale < 2) setScale(scale + 0.1);
@@ -63,7 +63,7 @@ export default function Main() {
           console.log('width:', window.screen.width);
           if(scale * 1500 < window.screen.width)
           setPosition({
-            x: 0,
+            x: (window.screen.width-1500)/2,
             y: 0,
           })
           setClickedPoint({
@@ -76,7 +76,7 @@ export default function Main() {
           console.log('width:', window.screen.width);
           if(scale * 1500 < window.screen.width)
           setPosition({
-            x: 0,
+            x: (window.screen.width-1500)/2,
             y: 0,
           })
           setClickedPoint({

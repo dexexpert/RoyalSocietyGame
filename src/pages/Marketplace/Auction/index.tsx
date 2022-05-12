@@ -2,7 +2,7 @@ import React from "react";
 
 import Filter from "./Filter";
 import LandView from "./Land";
-import { IProps } from "../../components/Input";
+import { IProps } from "../../../components/Input";
 
 export const statuses: IProps[] = [
   { title: 'All', value: -1 },

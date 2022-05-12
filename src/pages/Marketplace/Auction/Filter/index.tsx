@@ -1,7 +1,7 @@
 import React, { FunctionComponent} from 'react';
 
-import { GreenButton, CheckBox, RadioButton, IProps } from "../../../components/Input";
-import {IFilter} from '../Auction'
+import { GreenButton, CheckBox, RadioButton, IProps } from "../../../../components/Input";
+import {IFilter} from '..'
 
 type Props = {
   statuses?: IProps[];
@@ -38,7 +38,7 @@ const Filter:FunctionComponent<Props> = (props: Props) => {
   };
 
   return (
-    <div className="filter col md:w-1/3 w-10/12" data-v-412a3124="">
+    <div className="filter col md:w-1/3 w-10/12 h-full" data-v-412a3124="">
       <div className="filter-expanded game-border basic">
         <div className="filter-header">
           <div className="filter-header-group">
@@ -48,7 +48,7 @@ const Filter:FunctionComponent<Props> = (props: Props) => {
             </div>
           </div>
           <div className="filter-header-group">
-            <GreenButton title='Apply' onClick={() => props.onFilterChange(filter)}/>
+            <GreenButton title='Apply' onClick={() => props.onFilterChange(filter)} className='  min-w-[120px]'/>
             <GreenButton title='Reset' onClick={() => {
               setFilter({
                 assetId: '',
@@ -56,11 +56,11 @@ const Filter:FunctionComponent<Props> = (props: Props) => {
                 selectedStatuses: '-1'
               });
               props.onFilterChange(filter)
-            }}/>
+            }} className='  min-w-[120px]'/>
           </div>
         </div>
         <hr />
-        <div className="filter-body game-scroll-bar">
+        <div className="filter-body game-scroll-bar overflow-y-auto overflow-x-hidden">
           <div className="filter-search">
             <input 
               type="text" 

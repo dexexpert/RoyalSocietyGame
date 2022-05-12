@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from "react";
 
-import { LandViewBoard } from "../../../components/Modal";
-import { IAssest, IFilter } from "../Auction"
+import { LandViewBoard } from "../../../../components/Modal";
+import { IAssest, IFilter } from ".."
 import ViewCard from "./ViewCard";
 
 type Props = {

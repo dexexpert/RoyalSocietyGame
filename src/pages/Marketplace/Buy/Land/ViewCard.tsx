@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from "react";
 
 // import { IAssest, classes, statuses } from "../Auction"
-import { IAssest } from "../Auction"
+import { IAssest } from ".."
 
 type Props = {
   asset: IAssest;
@@ -31,7 +31,7 @@ const ViewCard:FunctionComponent<Props> = (props: Props) => {
               </div>
             </div>
             </div><div className="land-item__butotn-wrap">
-            <button className="green-button click-cursor"> View Details </button>
+            <button className="green-button click-cursor"> Buy Assets </button>
           </div>
         </div>
       </div>

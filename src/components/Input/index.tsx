@@ -5,6 +5,7 @@ export type IProps = {
   title?: string,
   value?: number,
   checked?: boolean,
+  className?: string,
   onClick?: (event: any) => void
 }
 
@@ -52,7 +53,7 @@ export const GameButton: FunctionComponent<IProps> = (props: IProps) => (
 
 
 export const GreenButton: FunctionComponent<IProps> = (props: IProps) => (
-  <button className="green-button click-cursor" onClick={props.onClick}> {props.title} </button>
+  <button className={`green-button click-cursor ${props.className?props.className:''}`} onClick={props.onClick}> {props.title} </button>
 )
 
 
